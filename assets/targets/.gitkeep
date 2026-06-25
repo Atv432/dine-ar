@@ -1,0 +1,26 @@
+# Mind AR Image Targets
+
+This folder stores compiled `.mind` files for image tracking in AR.
+
+## What are image targets?
+Image targets are compiled from photos of your menu cards or dish images. Mind AR uses them to detect when the camera sees the physical menu, then overlays the 3D model.
+
+## How to create targets:
+
+1. **Go to:** https://hiukim.github.io/mind-ar-js/tools/compile
+2. **Upload** high-resolution photos of:
+   - Your printed menu cards
+   - Individual dish photos
+   - Table markers
+3. **Download** the generated `targets.mind` file
+4. **Upload here** to `assets/targets/`
+5. **Update** `ar-viewer.html` line 26:
+   ```javascript
+   imageTargetSrc: 'https://atv432.github.io/dine-ar/assets/targets/targets.mind'
+   ```
+
+## Best practices:
+- Use high-contrast images (avoid plain white backgrounds)
+- Minimum 480x640px resolution
+- Avoid repetitive patterns
+- Test with printed menu cards under restaurant lighting
