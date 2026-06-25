@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DineAR — Experience Food in AR</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🍽️</span>
+      <span class="logo-text">Dine<span class="accent">AR</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#how">How It Works</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✨ Augmented Reality Restaurant Menu</div>
+      <h1>See Your Food<br /><span class="accent">Before You Order</span></h1>
+      <p>Scan any dish to experience it in full 3D AR — right on your table. No app needed.</p>
+      <a href="#menu" class="btn-primary">Explore Menu ↓</a>
+    </div>
+    <div class="hero-visual">
+      <div class="ar-orb">
+        <div class="orb-ring r1"></div>
+        <div class="orb-ring r2"></div>
+        <div class="orb-ring r3"></div>
+        <div class="orb-center">🍔</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-section" id="how">
+    <h2>How It <span class="accent">Works</span></h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-icon">📱</div><h3>Open Link</h3><p>Scan the QR on your table or open the URL sent by waiter</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">2</div><div class="step-icon">👁️</div><h3>Tap View in AR</h3><p>Choose any dish and tap the AR button to activate camera</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🍔</div><h3>See in 3D</h3><p>Point at the menu card — your dish appears life-size in 3D</p></div>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="menu-header">
+      <h2>Our <span class="accent">Menu</span></h2>
+      <p>Tap any dish to experience it in Augmented Reality</p>
+    </div>
+    <div class="category-tabs">
+      <button class="tab active" data-cat="all" onclick="filterMenu('all',this)">All</button>
+      <button class="tab" data-cat="burgers" onclick="filterMenu('burgers',this)">Burgers</button>
+      <button class="tab" data-cat="pizza" onclick="filterMenu('pizza',this)">Pizza</button>
+      <button class="tab" data-cat="drinks" onclick="filterMenu('drinks',this)">Drinks</button>
+      <button class="tab" data-cat="desserts" onclick="filterMenu('desserts',this)">Desserts</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+
+      <div class="dish-card" data-cat="burgers">
+        <div class="dish-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          <span class="dish-emoji">🍔</span>
+          <span class="ar-badge">AR</span>
+          <span class="tag-badge">Bestseller</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-row"><h3>Classic Smash Burger</h3><span class="dot red">●</span></div>
+          <p>Double smashed patty, cheddar, caramelized onions, special sauce</p>
+          <div class="dish-footer">
+            <span class="price">₹299</span>
+            <div class="dish-btns">
+              <button class="btn-ar" onclick="openAR('burger','Classic Smash Burger')">👁 View in AR</button>
+              <button class="btn-add" onclick="addToCart('Classic Smash Burger',299)">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="pizza">
+        <div class="dish-img" style="background:linear-gradient(135deg,#2d1b00,#4a2e00)">
+          <span class="dish-emoji">🍕</span>
+          <span class="ar-badge">AR</span>
+          <span class="tag-badge veg-tag">Veg</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-row"><h3>Margherita Supreme</h3><span class="dot green">●</span></div>
+          <p>Fresh mozzarella, San Marzano tomatoes, basil, olive oil</p>
+          <div class="dish-footer">
+            <span class="price">₹349</span>
+            <div class="dish-btns">
+              <button class="btn-ar" onclick="openAR('burger','Margherita Supreme')">👁 View in AR</button>
+              <button class="btn-add" onclick="addToCart('Margherita Supreme',349)">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="burgers">
+        <div class="dish-img" style="background:linear-gradient(135deg,#1a0a00,#3d1c00)">
+          <span class="dish-emoji">🍗</span>
+          <span class="ar-badge">AR</span>
+          <span class="tag-badge hot-tag">Hot Pick</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-row"><h3>Crispy Chicken Wrap</h3><span class="dot red">●</span></div>
+          <p>Crispy fried chicken, slaw, jalapeños, chipotle mayo in grilled tortilla</p>
+          <div class="dish-footer">
+            <span class="price">₹249</span>
+            <div class="dish-btns">
+              <button class="btn-ar" onclick="openAR('burger','Crispy Chicken Wrap')">👁 View in AR</button>
+              <button class="btn-add" onclick="addToCart('Crispy Chicken Wrap',249)">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="desserts">
+        <div class="dish-img" style="background:linear-gradient(135deg,#1a0020,#3d0050)">
+          <span class="dish-emoji">🍰</span>
+          <span class="ar-badge">AR</span>
+          <span class="tag-badge veg-tag">Veg</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-row"><h3>New York Cheesecake</h3><span class="dot green">●</span></div>
+          <p>Classic baked cheesecake with berry compote and graham cracker crust</p>
+          <div class="dish-footer">
+            <span class="price">₹199</span>
+            <div class="dish-btns">
+              <button class="btn-ar" onclick="openAR('burger','NY Cheesecake')">👁 View in AR</button>
+              <button class="btn-add" onclick="addToCart('NY Cheesecake',199)">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="drinks">
+        <div class="dish-img" style="background:linear-gradient(135deg,#001a10,#003d24)">
+          <span class="dish-emoji">🥤</span>
+          <span class="ar-badge">AR</span>
+          <span class="tag-badge veg-tag">Fresh</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-row"><h3>Mango Passion Smoothie</h3><span class="dot green">●</span></div>
+          <p>Fresh Alphonso mango, passion fruit, coconut milk, mint, ice</p>
+          <div class="dish-footer">
+            <span class="price">₹149</span>
+            <div class="dish-btns">
+              <button class="btn-ar" onclick="openAR('burger','Mango Smoothie')">👁 View in AR</button>
+              <button class="btn-add" onclick="addToCart('Mango Smoothie',149)">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="pizza">
+        <div class="dish-img" style="background:linear-gradient(135deg,#1a0000,#3d0000)">
+          <span class="dish-emoji">🍕</span>
+          <span class="ar-badge">AR</span>
+          <span class="tag-badge hot-tag">Smoky</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-row"><h3>BBQ Chicken Pizza</h3><span class="dot red">●</span></div>
+          <p>Smoky BBQ base, grilled chicken, red onions, jalapeños, mozzarella</p>
+          <div class="dish-footer">
+            <span class="price">₹399</span>
+            <div class="dish-btns">
+              <button class="btn-ar" onclick="openAR('burger','BBQ Chicken Pizza')">👁 View in AR</button>
+              <button class="btn-add" onclick="addToCart('BBQ Chicken Pizza',399)">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cart-fab" id="cartFab" onclick="toggleCart()">
+    🛒 <span class="cart-badge" id="cartBadge">0</span>
+  </div>
+
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-hdr">
+      <h3>🛒 Your Order</h3>
+      <button class="close-btn" onclick="toggleCart()">&#x2715;</button>
+    </div>
+    <div class="cart-body" id="cartBody"><p class="empty-msg">Your cart is empty 😔</p></div>
+    <div class="cart-ftr" id="cartFtr" style="display:none">
+      <div class="total-line"><span>Subtotal</span><span id="sub">&#8377;0</span></div>
+      <div class="total-line"><span>GST 5%</span><span id="gst">&#8377;0</span></div>
+      <div class="total-line total-big"><span>Total</span><span id="tot">&#8377;0</span></div>
+      <button class="btn-order" onclick="placeOrder()">Place Order →</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <footer>
+    <p>🍽️ Dine<span class="accent">AR</span> &mdash; Experience food like never before</p>
+    <p class="footer-sub">Powered by Mind AR.js &bull; Three.js &bull; WebAR</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
