@@ -1,0 +1,20 @@
+# Place your .glb 3D model files here
+
+This folder is for storing your Unity-exported food models.
+
+## Supported formats:
+- .glb (binary glTF - recommended)
+- .gltf (text glTF + separate textures)
+
+## File naming:
+- burger.glb
+- pizza.glb
+- cake.glb
+- smoothie.glb
+- etc.
+
+## Upload your models:
+1. Export from Unity as glTF 2.0
+2. Upload .glb file here via GitHub web UI
+3. Update ar-viewer.html to point to: 
+   https://atv432.github.io/dine-ar/assets/models/your-model.glb
